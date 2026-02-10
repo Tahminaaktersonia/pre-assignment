@@ -1,0 +1,13 @@
+
+
+
+---
+- name: Create test files and set permissions
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: file
+    mode: "0750"
+  loop:
+    - /tmp/testme-1.py
+    - /tmp/testme-2.py
+
