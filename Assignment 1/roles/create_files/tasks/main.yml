@@ -1,13 +1,19 @@
 
 
 ---
-- name: Create test files and set permissions
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: touch
-    mode: "0750"
+- name: Create test files if missing
+  ansible.builtin.command: "touch {{ item }}"
+  args:
+    creates: "{{ item }}"
   loop:
     - /tmp/testme-1.py
     - /tmp/testme-2.py
 
+- name: Set permissions for test files
+  ansible.builtin.file:
+    path: "{{ item }}"
+    mode: "0750"
+  loop:
+    - /tmp/testme-1.py
+    - /tmp/testme-2.py
 
