@@ -1,6 +1,5 @@
 
 
-
 ---
 - name: Create test files and set permissions
   ansible.builtin.file:
