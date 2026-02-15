@@ -22,7 +22,6 @@ Adds a header to the files (idempotent).
 
 Run all roles:
 
-## AI Assistance Disclosure
+## AI Assistance 
 - Help structure the Ansible project
 - Ensure idempotency and correct permission handling
-- Assist with Git conflict resolution
