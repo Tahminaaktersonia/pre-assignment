@@ -1,0 +1,11 @@
+---
+- name: Add header after shebang (idempotent)
+  ansible.builtin.lineinfile:
+    path: "{{ item }}"
+    line: "# Managed by Ansible"
+    regexp: "^# Managed by Ansible$"
+    insertafter: "^#!/usr/bin/env python3$"
+    create: true
+  loop:
+    - /tmp/testme-1.py
+    - /tmp/testme-2.py

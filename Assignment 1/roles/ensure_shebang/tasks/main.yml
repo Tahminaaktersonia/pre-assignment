@@ -1,0 +1,11 @@
+---
+- name: Ensure python shebang exists at BOF
+  ansible.builtin.lineinfile:
+    path: "{{ item }}"
+    line: "#!/usr/bin/env python3"
+    regexp: "^#!"
+    insertbefore: BOF
+    create: true
+  loop:
+    - /tmp/testme-1.py
+    - /tmp/testme-2.py

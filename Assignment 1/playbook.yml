@@ -1,0 +1,13 @@
+---
+- name: Assignment 1 playbook
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  roles:
+    - role: create_files
+      tags: [create]
+    - role: ensure_shebang
+      tags: [shebang]
+    - role: add_header
+      tags: [header]
